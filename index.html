@@ -18,52 +18,69 @@
     .container{width:min(1160px,92%);margin:auto}
     header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
     .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{display:flex;align-items:center;gap:12px}.brand-logo{width:52px;height:52px;object-fit:contain;border-radius:10px}
-    .brand-mark{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;font-weight:900;font-size:25px;box-shadow:0 8px 20px rgba(18,104,212,.25)}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand-logo{width:52px;height:52px;object-fit:contain;border-radius:10px}
     .brand-text strong{display:block;letter-spacing:2px;color:var(--navy);font-size:18px}
     .brand-text span{font-size:10px;color:var(--muted);letter-spacing:.5px}
     nav{display:flex;gap:22px;align-items:center}
     nav a{font-size:14px;font-weight:700;color:#3b4960}
     nav a:hover{color:var(--blue)}
     .menu{display:none;border:0;background:none;font-size:28px}
-    .hero{background:radial-gradient(circle at 85% 20%,#dcebff 0,transparent 34%),linear-gradient(180deg,#f7fbff,#fff);padding:92px 0 80px}
-    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:55px;align-items:center}
+    
+    /* Hero Section */
+    .hero{background:radial-gradient(circle at 85% 20%,#dcebff 0,transparent 34%),linear-gradient(180deg,#f7fbff,#fff);padding:80px 0 60px}
+    .hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:45px;align-items:center}
     .eyebrow{display:inline-block;color:var(--blue);background:var(--sky);padding:7px 13px;border-radius:99px;font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
-    h1{font-size:clamp(42px,6vw,72px);line-height:1.02;margin:20px 0 12px;color:var(--navy);letter-spacing:-2px}
+    h1{font-size:clamp(38px,5vw,64px);line-height:1.08;margin:20px 0 12px;color:var(--navy);letter-spacing:-1.5px}
     h1 span{color:var(--blue)}
-    .tagline{font-size:21px;color:#4b5c75;max-width:680px}
-    .buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .tagline{font-size:20px;color:#4b5c75;max-width:680px}
+    .buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
     .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:10px;font-weight:800;border:1px solid var(--blue)}
     .btn.primary{background:var(--blue);color:#fff}
     .btn.secondary{color:var(--navy);background:#fff}
+    
+    .hero-banner{width:100%;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;border:1px solid var(--line)}
+    .hero-banner img{width:100%;height:auto;display:block}
+
+    /* Profile Card */
     .profile-card{background:#fff;border:1px solid var(--line);border-radius:26px;padding:30px;box-shadow:var(--shadow)}
-    .profile-logo{width:150px;max-width:100%;height:auto;display:block;margin:0 auto 8px;border-radius:10px}.profile-card .initials{display:none}
     .profile-card h2{margin:18px 0 3px;color:var(--navy)}
     .profile-card .role{color:var(--blue);font-weight:800}
     .credentials{margin-top:18px;padding-top:18px;border-top:1px solid var(--line);font-size:14px;color:#46566f}
-    section{padding:85px 0}
+    
+    section{padding:80px 0}
     .section-head{text-align:center;max-width:760px;margin:0 auto 42px}
-    .section-head h2{font-size:38px;color:var(--navy);margin:8px 0}
+    .section-head h2{font-size:36px;color:var(--navy);margin:8px 0}
     .section-head p{color:var(--muted)}
+    
+    /* About Section */
     .about{background:#f8fbff}
-    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px}
+    .about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:35px;align-items:center}
+    .about-image{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:0 8px 25px rgba(7,27,73,.05)}
+    .about-image img{width:100%;height:auto;display:block}
     .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 8px 25px rgba(7,27,73,.05)}
     .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
-    .stat{padding:20px;border-radius:16px;background:var(--sky);text-align:center}
-    .stat strong{display:block;font-size:28px;color:var(--navy)}
+    .stat{padding:18px;border-radius:16px;background:var(--sky);text-align:center}
+    .stat strong{display:block;font-size:26px;color:var(--navy)}
     .stat span{font-size:12px;color:var(--muted)}
-    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .service{border:1px solid var(--line);border-radius:18px;padding:25px;background:#fff;transition:.25s}
+    
+    /* Services Grid */
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .service{border:1px solid var(--line);border-radius:18px;background:#fff;overflow:hidden;transition:.25s;display:flex;flex-direction:column}
     .service:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#bcd5f2}
-    .icon{font-size:30px}
-    .service h3{color:var(--navy);margin:12px 0 7px}
+    .service-img{width:100%;height:180px;object-fit:cover;border-bottom:1px solid var(--line)}
+    .service-content{padding:22px;flex-grow:1}
+    .service h3{color:var(--navy);margin:0 0 8px}
     .service p{font-size:14px;color:var(--muted);margin:0}
+    
     .areas{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
     .pill{padding:10px 15px;background:#f3f7fc;border:1px solid var(--line);border-radius:99px;color:#31445e;font-weight:700;font-size:13px}
+    
     .segments{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
     .segment h3{color:var(--navy);margin-top:0}
     .segment ul{padding-left:20px;color:var(--muted)}
     .price{font-weight:900;color:var(--gold)}
+    
     .contact{background:linear-gradient(135deg,var(--navy),#0d4f9e);color:#fff}
     .contact .section-head h2,.contact .section-head p{color:#fff}
     .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -71,8 +88,10 @@
     .contact-card h3{margin-top:0}
     .contact-card a{text-decoration:underline}
     .payment-note{font-size:12px;opacity:.78;margin-top:15px}
+    
     footer{background:#04132f;color:#cbd7e8;padding:28px 0;text-align:center;font-size:13px}
     .top{display:inline-block;margin-top:12px;color:#fff}
+    
     @media(max-width:900px){
       .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
       .services{grid-template-columns:repeat(2,1fr)}
@@ -81,8 +100,8 @@
     }
     @media(max-width:600px){
       .services,.segments,.stats{grid-template-columns:1fr}
-      .hero{padding-top:60px}
-      section{padding:60px 0}
+      .hero{padding-top:40px}
+      section{padding:50px 0}
       h1{letter-spacing:-1px}
     }
   </style>
@@ -91,7 +110,7 @@
 <header>
   <div class="container nav">
     <a class="brand" href="#home">
-      <img class="brand-logo" src="nexus-logo.png" alt="NEXUS Academic Research & Scientific Consultancy logo">
+      <img class="brand-logo" src="nexus-logo.jpg" alt="NEXUS Academic Research & Scientific Consultancy logo">
       <div class="brand-text"><strong>NEXUS</strong><span>ACADEMIC RESEARCH & SCIENTIFIC CONSULTANCY</span></div>
     </a>
     <button class="menu" aria-label="Open menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
@@ -115,17 +134,8 @@
         <a class="btn secondary" href="https://www.linkedin.com/in/dr-bechoo-lal-722a7614/" target="_blank">LinkedIn Profile</a>
       </div>
     </div>
-    <div class="profile-card">
-      <img class="profile-logo" src="nexus-logo.png" alt="NEXUS Academic Research & Scientific Consultancy logo">
-      <h2>Dr. Bechoo Lal</h2>
-      <div class="role">Founder & Principal Consultant</div>
-      <div class="credentials">
-        <b>Doctor of Science – Computer Science</b><br>
-        <b>PhD – Computer Science</b><br>
-        <b>M.Tech – CSE</b><br>
-        <b>PGP – Data Science – Purdue University, USA</b>
-      </div>
-      <p style="color:#60708a;font-size:14px">More than 20 years of experience in higher education, research, innovation and industry-academia collaboration.</p>
+    <div class="hero-banner">
+      <img src="watermarked_img_15304459580859179558.png" alt="NEXUS Academic Research & Scientific Consultancy Office">
     </div>
   </div>
 </section>
@@ -138,20 +148,22 @@
       <p>NEXUS provides structured academic and scientific support across research methodology, Machine Learning, Artificial Intelligence, Data Science, analytics and emerging technologies.</p>
     </div>
     <div class="about-grid">
+      <div class="about-image">
+        <img src="watermarked_img_12950430717588795683.png" alt="Research expertise with practical impact visualization">
+      </div>
       <div class="card">
         <h3>About Dr. Bechoo Lal</h3>
         <p>Dr. Bechoo Lal is an accomplished academician, researcher, research supervisor and technology consultant specializing in Machine Learning, Artificial Intelligence, Data Science, Predictive Analytics, Big Data Analytics and Digital Transformation.</p>
-        <p>His research portfolio includes more than 90 research publications, 13 patents and 10 books, according to the supplied consultancy document.</p>
-      </div>
-      <div class="card">
-        <h3>Research Profile</h3>
+        <p>His research portfolio includes more than 90 research publications, 13 patents and 10 books[cite: 1].</p>
+        <div class="credentials" style="border-top:none;padding-top:0">
+          <b>D.Sc. & PhD – Computer Science</b><br>
+          <b>PGP – Data Science (Purdue University, USA)</b>
+        </div>
         <div class="stats">
-          <div class="stat"><strong>20+</strong><span>Years Experience</span></div>
-          <div class="stat"><strong>90+</strong><span>Research Publications</span></div>
+          <div class="stat"><strong>20+</strong><span>Years Exp.</span></div>
+          <div class="stat"><strong>90+</strong><span>Papers</span></div>
           <div class="stat"><strong>13</strong><span>Patents</span></div>
         </div>
-        <p style="margin-top:18px;color:#60708a">Scopus ID: <b>58043508200</b></p>
-        <p style="color:#60708a">Google Scholar and ResearchGate profiles are available through the contact section.</p>
       </div>
     </div>
   </div>
@@ -165,12 +177,48 @@
       <p>Focused support designed around the research journey—from idea and methodology to analysis, publication and training.</p>
     </div>
     <div class="services">
-      <div class="service"><div class="icon">🔬</div><h3>Research Consultation</h3><p>Research-topic selection, research-gap identification, methodology and experimental design guidance.</p></div>
-      <div class="service"><div class="icon">🎓</div><h3>PhD Research Mentoring</h3><p>Research methodology, thesis structure, dataset selection, ML model selection and interpretation guidance.</p></div>
-      <div class="service"><div class="icon">🤖</div><h3>Machine Learning Consultancy</h3><p>ML/Data Science consultation, model selection, implementation mentoring and research experimentation.</p></div>
-      <div class="service"><div class="icon">📊</div><h3>Data Analysis</h3><p>Data analysis, statistical analysis, results interpretation and predictive analytics support.</p></div>
-      <div class="service"><div class="icon">📝</div><h3>Research Paper Technical Review</h3><p>Technical review, journal-selection strategy and reviewer-response guidance.</p></div>
-      <div class="service"><div class="icon">💻</div><h3>Online Research Training</h3><p>Research workshops, Python for research, AI/ML, Data Science and research-paper writing training.</p></div>
+      <div class="service">
+        <img class="service-img" src="watermarked_img_11640812878060242023.png" alt="Research Consultation">
+        <div class="service-content">
+          <h3>Research Consultation</h3>
+          <p>Research-topic selection, research-gap identification, methodology and experimental design guidance.</p>
+        </div>
+      </div>
+      <div class="service">
+        <img class="service-img" src="watermarked_img_12781504364852123616.png" alt="PhD Research Mentoring">
+        <div class="service-content">
+          <h3>PhD Research Mentoring</h3>
+          <p>Research methodology, thesis structure, dataset selection, ML model selection and interpretation guidance.</p>
+        </div>
+      </div>
+      <div class="service">
+        <img class="service-img" src="watermarked_img_13571439674724590310.png" alt="Machine Learning Consultancy">
+        <div class="service-content">
+          <h3>Machine Learning Consultancy</h3>
+          <p>ML/Data Science consultation, model selection, implementation mentoring and research experimentation.</p>
+        </div>
+      </div>
+      <div class="service">
+        <img class="service-img" src="ChatGPT Image Aug 21, 2026, 10_44_51 PM.png" alt="Data Analysis">
+        <div class="service-content">
+          <h3>Data Analysis</h3>
+          <p>Data analysis, statistical analysis, results interpretation and predictive analytics support.</p>
+        </div>
+      </div>
+      <div class="service">
+        <img class="service-img" src="watermarked_img_12950430717588795683.png" alt="Research Paper Technical Review">
+        <div class="service-content">
+          <h3>Research Paper Technical Review</h3>
+          <p>Technical review, journal-selection strategy and reviewer-response guidance.</p>
+        </div>
+      </div>
+      <div class="service">
+        <img class="service-img" src="watermarked_img_15304459580859179558.png" alt="Online Research Training">
+        <div class="service-content">
+          <h3>Online Research Training</h3>
+          <p>Research workshops, Python for research, AI/ML, Data Science and research-paper writing training.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
