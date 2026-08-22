@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NEXUS Academic Research & Scientific Consultancy — Research consultation, PhD mentoring, Machine Learning, Data Science, data analysis, research paper technical review and online research training.">
+  <meta name="author" content="Dr. Bechoo Lal">
+  <title>NEXUS | Academic Research & Scientific Consultancy</title>
+  <style>
+    :root{
+      --navy:#071b49; --blue:#1268d4; --sky:#eaf4ff; --gold:#c9972b;
+      --ink:#172033; --muted:#60708a; --white:#fff; --line:#dbe5f0;
+      --shadow:0 16px 45px rgba(7,27,73,.10); --radius:20px;
+    }
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1160px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand-logo{width:52px;height:52px;object-fit:contain;border-radius:10px}
+    .brand-text strong{display:block;letter-spacing:2px;color:var(--navy);font-size:18px}
+    .brand-text span{font-size:10px;color:var(--muted);letter-spacing:.5px}
+    nav{display:flex;gap:22px;align-items:center}
+    nav a{font-size:14px;font-weight:700;color:#3b4960}
+    nav a:hover{color:var(--blue)}
+    .menu{display:none;border:0;background:none;font-size:28px}
+    
+    /* Hero Section */
+    .hero{background:radial-gradient(circle at 85% 20%,#dcebff 0,transparent 34%),linear-gradient(180deg,#f7fbff,#fff);padding:80px 0 60px}
+    .hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:45px;align-items:center}
+    .eyebrow{display:inline-block;color:var(--blue);background:var(--sky);padding:7px 13px;border-radius:99px;font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+    h1{font-size:clamp(38px,5vw,64px);line-height:1.08;margin:20px 0 12px;color:var(--navy);letter-spacing:-1.5px}
+    h1 span{color:var(--blue)}
+    .tagline{font-size:20px;color:#4b5c75;max-width:680px}
+    .buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:10px;font-weight:800;border:1px solid var(--blue)}
+    .btn.primary{background:var(--blue);color:#fff}
+    .btn.secondary{color:var(--navy);background:#fff}
+    
+    .hero-banner{width:100%;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;border:1px solid var(--line)}
+    .hero-banner img{width:100%;height:auto;display:block}
+
+    /* Profile Card */
+    .profile-card{background:#fff;border:1px solid var(--line);border-radius:26px;padding:30px;box-shadow:var(--shadow)}
+    .profile-card h2{margin:18px 0 3px;color:var(--navy)}
+    .profile-card .role{color:var(--blue);font-weight:800}
+    .credentials{margin-top:18px;padding-top:18px;border-top:1px solid var(--line);font-size:14px;color:#46566f}
+    
+    section{padding:80px 0}
+    .section-head{text-align:center;max-width:760px;margin:0 auto 42px}
+    .section-head h2{font-size:36px;color:var(--navy);margin:8px 0}
+    .section-head p{color:var(--muted)}
+    
+    /* About Section */
+    .about{background:#f8fbff}
+    .about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:35px;align-items:center}
+    .about-image{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:0 8px 25px rgba(7,27,73,.05)}
+    .about-image img{width:100%;height:auto;display:block}
+    .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 8px 25px rgba(7,27,73,.05)}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+    .stat{padding:18px;border-radius:16px;background:var(--sky);text-align:center}
+    .stat strong{display:block;font-size:26px;color:var(--navy)}
+    .stat span{font-size:12px;color:var(--muted)}
+    
+    /* Services Grid */
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .service{border:1px solid var(--line);border-radius:18px;background:#fff;overflow:hidden;transition:.25s;display:flex;flex-direction:column}
+    .service:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#bcd5f2}
+    .service-img{width:100%;height:180px;object-fit:cover;border-bottom:1px solid var(--line)}
+    .service-content{padding:22px;flex-grow:1}
+    .service h3{color:var(--navy);margin:0 0 8px}
+    .service p{font-size:14px;color:var(--muted);margin:0}
+    
+    .areas{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+    .pill{padding:10px 15px;background:#f3f7fc;border:1px solid var(--line);border-radius:99px;color:#31445e;font-weight:700;font-size:13px}
+    
+    .segments{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .segment h3{color:var(--navy);margin-top:0}
+    .segment ul{padding-left:20px;color:var(--muted)}
+    .price{font-weight:900;color:var(--gold)}
+    
+    .contact{background:linear-gradient(135deg,var(--navy),#0d4f9e);color:#fff}
+    .contact .section-head h2,.contact .section-head p{color:#fff}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .contact-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:28px}
+    .contact-card h3{margin-top:0}
+    .contact-card a{text-decoration:underline}
+    .payment-note{font-size:12px;opacity:.78;margin-top:15px}
+    
+    footer{background:#04132f;color:#cbd7e8;padding:28px 0;text-align:center;font-size:13px}
+    .top{display:inline-block;margin-top:12px;color:#fff}
+    
+    @media(max-width:900px){
+      .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+      .services{grid-template-columns:repeat(2,1fr)}
+      nav{display:none}.menu{display:block}
+      nav.open{display:flex;position:absolute;top:76px;left:0;right:0;background:#fff;padding:18px 5%;flex-direction:column;border-bottom:1px solid var(--line)}
+    }
+    @media(max-width:600px){
+      .services,.segments,.stats{grid-template-columns:1fr}
+      .hero{padding-top:40px}
+      section{padding:50px 0}
+      h1{letter-spacing:-1px}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home">
+      <img class="brand-logo" src="nexus-logo.jpg" alt="NEXUS Academic Research & Scientific Consultancy logo">
+      <div class="brand-text"><strong>NEXUS</strong><span>ACADEMIC RESEARCH & SCIENTIFIC CONSULTANCY</span></div>
+    </a>
+    <button class="menu" aria-label="Open menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+    <nav>
+      <a href="#about">About</a><a href="#services">Services</a><a href="#areas">Research Areas</a>
+      <a href="#segments">Clients</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Research • Innovation • Data Science</span>
+      <h1>NEXUS <span>Academic Research</span> & Scientific Consultancy</h1>
+      <p class="tagline">Connecting Ideas • Advancing Research • Creating Impact</p>
+      <p>Professional research guidance and technology consultancy for scholars, faculty members, students, universities, startups and organizations.</p>
+      <div class="buttons">
+        <a class="btn primary" href="#contact">Book a Consultation</a>
+        <a class="btn secondary" href="https://www.linkedin.com/in/dr-bechoo-lal-722a7614/" target="_blank">LinkedIn Profile</a>
+      </div>
+    </div>
+    <div class="hero-banner">
+      <img src="watermarked_img_15304459580859179558.png" alt="NEXUS Academic Research & Scientific Consultancy Office">
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">About the Consultancy</span>
+      <h2>Research expertise with practical impact</h2>
+      <p>NEXUS provides structured academic and scientific support across research methodology, Machine Learning, Artificial Intelligence, Data Science, analytics and emerging technologies.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-image">
+        <img src="watermarked_img_12950430717588795683.png" alt="Research expertise with practical impact visualization">
+      </div>
+      <div class="card">
+        <h3>About Dr. Bechoo Lal</h3>
+        <p>Dr. Bechoo Lal is an accomplished academician, researcher, research supervisor and technology consultant specializing in Machine Learning, Artificial Intelligence, Data Science, Predictive Analytics, Big Data Analytics and Digital Transformation.</p>
+        <p>His research portfolio includes more than 90 research publications, 13 patents and 10 books[cite: 1].</p>
+        <div class="credentials" style="border-top:none;padding-top:0">
+          <b>D.Sc. & PhD – Computer Science</b><br>
+          <b>PGP – Data Science (Purdue University, USA)</b>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>20+</strong><span>Years Exp.</span></div>
+          <div class="stat"><strong>90+</strong><span>Papers</span></div>
+          <div class="stat"><strong>13</strong><span>Patents</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Core Services</span>
+      <h2>Six major consultancy services</h2>
+      <p>Focused support designed around the research journey—from idea and methodology to analysis, publication and training.</p>
+    </div>
+    <div class="services">
+      <div class="service">
+        <img class="service-img" src="watermarked_img_11640812878060242023.png" alt="Research Consultation">
+        <div class="service-content">
+          <h3>Research Consultation</h3>
+          <p>Research-topic selection, research-gap identification, methodology and experimental design guidance.</p>
+        </div>
+      </div>
+      <div class="service">
+        <img class="service-img" src="watermarked_img_12781504364852123616.png" alt="PhD Research Mentoring">
+        <div class="service-content">
+          <h3>PhD Research Mentoring</h3>
+          <p>Research methodology, thesis structure, dataset selection, ML model selection and interpretation guidance.</p>
+        </div>
+      </div>
+      <div class="service">
+        <img class="service-img" src="watermarked_img_13571439674724590310.png" alt="Machine Learning Consultancy">
+        <div class="service-content">
+          <h3>Machine Learning Consultancy</h3>
+          <p>ML/Data Science consultation, model selection, implementation mentoring and research experimentation.</p>
+        </div>
+      </div>
+      <div class="service">
+        <img class="service-img" src="ChatGPT Image Aug 21, 2026, 10_44_51 PM.png" alt="Data Analysis">
+        <div class="service-content">
+          <h3>Data Analysis</h3>
+          <p>Data analysis, statistical analysis, results interpretation and predictive analytics support.</p>
+        </div>
+      </div>
+      <div class="service">
+        <img class="service-img" src="watermarked_img_12950430717588795683.png" alt="Research Paper Technical Review">
+        <div class="service-content">
+          <h3>Research Paper Technical Review</h3>
+          <p>Technical review, journal-selection strategy and reviewer-response guidance.</p>
+        </div>
+      </div>
+      <div class="service">
+        <img class="service-img" src="watermarked_img_15304459580859179558.png" alt="Online Research Training">
+        <div class="service-content">
+          <h3>Online Research Training</h3>
+          <p>Research workshops, Python for research, AI/ML, Data Science and research-paper writing training.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="areas" class="about">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Research Areas</span>
+      <h2>Technology & scientific domains</h2>
+    </div>
+    <div class="areas">
+      <span class="pill">Machine Learning</span><span class="pill">Deep Learning</span><span class="pill">Data Science</span>
+      <span class="pill">Artificial Intelligence</span><span class="pill">Cybersecurity</span><span class="pill">Anomaly Detection</span>
+      <span class="pill">Big Data Analytics</span><span class="pill">NLP</span><span class="pill">Computer Vision</span>
+      <span class="pill">Predictive Analytics</span><span class="pill">Statistical Data Analysis</span>
+    </div>
+  </div>
+</section>
+
+<section id="segments">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Who We Serve</span>
+      <h2>Consultancy for every stage of research</h2>
+    </div>
+    <div class="segments">
+      <div class="card segment"><h3>PhD Scholars</h3><ul><li>Research-topic selection</li><li>Research-gap identification</li><li>Research methodology</li><li>Dataset & ML model selection</li><li>Experimental design</li><li>Data analysis & results interpretation</li><li>Thesis structure guidance</li></ul><div class="price">Indicative range: ₹3,000–₹25,000</div></div>
+      <div class="card segment"><h3>Faculty Members</h3><ul><li>Research proposal development guidance</li><li>Research methodology</li><li>ML/Data Science consultation</li><li>Data analysis</li><li>Research-paper technical review</li><li>Journal-selection strategy</li><li>Reviewer-response guidance</li><li>Research workshops</li></ul><div class="price">Indicative range: ₹5,000–₹30,000/project</div></div>
+      <div class="card segment"><h3>M.Tech / MCA / M.Sc. / B.Tech Students</h3><ul><li>Project-topic selection</li><li>Dataset selection</li><li>Python/ML guidance</li><li>Implementation mentoring</li><li>Project documentation guidance</li><li>Presentation/viva preparation</li></ul><div class="price">Indicative range: ₹3,000–₹15,000</div></div>
+      <div class="card segment"><h3>Universities & Colleges</h3><ul><li>Faculty development programmes</li><li>Research methodology workshops</li><li>ML/Data Science workshops</li><li>Python for research</li><li>AI for researchers</li><li>Research-paper writing workshops</li><li>Data-analysis workshops</li><li>PhD research methodology programmes</li></ul><div class="price">Indicative range: ₹15,000–₹50,000+ / workshop</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" style="background:rgba(255,255,255,.12);color:#fff">Contact</span>
+      <h2>Let's advance your research</h2>
+      <p>For consultation enquiries, please contact Dr. Bechoo Lal directly.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Direct Contact</h3>
+        <p><b>Email:</b> <a href="mailto:info@nexusresearchconsultancy.com">info@nexusresearchconsultancy.com</a></p>
+        <p><b>Mobile / WhatsApp:</b> <a href="https://wa.me/918850270935">+91 8850270935</a></p>
+        <p><b>Skype:</b> dr_bechoolal</p>
+        <p><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/dr-bechoo-lal-722a7614/" target="_blank">Dr. Bechoo Lal</a></p>
+        <p><b>Google Scholar:</b> <a href="https://scholar.google.com/citations?user=tAJWQLoAAAAJ&hl=en" target="_blank">View profile</a></p>
+        <p><b>ResearchGate:</b> <a href="https://www.researchgate.net/profile/Bechoo-Lal-2" target="_blank">View profile</a></p>
+      </div>
+      <div class="contact-card">
+        <h3>Payment Information</h3>
+        <p><b>Indian Customers — Bank Transfer</b></p>
+        <p>Account Name: Bechoo Lal<br>South Indian Bank, Vashi Branch<br>Navi Mumbai, Maharashtra, India<br>IFSC: SIBL0000409<br>Account No.: <b>Available on invoice / direct confirmation</b></p>
+        <p><b>International Customers — PayPal</b><br><a href="mailto:blal2k7@gmail.com">blal2k7@gmail.com</a></p>
+        <p class="payment-note">For security, the full bank account number is intentionally not displayed publicly on this website. Share complete payment details through an invoice or direct communication.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <strong>NEXUS Academic Research & Scientific Consultancy</strong><br>
+    © <span id="year"></span> Dr. Bechoo Lal. All rights reserved.
+    <br><a class="top" href="#home">Back to top ↑</a>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
